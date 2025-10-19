@@ -1,0 +1,21 @@
+! Hide "Mixes" (auto-generated playlists)
+youtube.com##ytd-radio-renderer.style-scope.ytd-rich-grid-row
+
+! Hide "Recommended for you" or "Because you watched"
+youtube.com##ytd-rich-section-renderer:has(span:has-text(/recommended for you|because you watched/i))
+
+! Hide "Community posts"
+youtube.com##ytd-rich-section-renderer:has(ytd-rich-item-renderer ytd-post-renderer)
+
+! Hide autoplay toggle popup
+youtube.com##tp-yt-paper-dialog.ytd-popup-container
+
+! Disable endscreen elements (popups after video)
+youtube.com##.ytp-ce-element
+
+! Hide “Join” or “Thanks” buttons under videos
+youtube.com##ytd-button-renderer:has(yt-formatted-string:has-text(/Join|Thanks/i))
+
+! Hide YouTube Music and Gaming sections
+www.youtube.com##ytd-guide-entry-renderer[title="YouTube Music"]
+www.youtube.com##ytd-guide-entry-renderer[title="Gaming"]
