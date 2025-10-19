@@ -1,0 +1,68 @@
+! =======================================================
+!  CUSTOM FILTER LIST
+!  Remove YouTube Shorts, ads, popups & clutter
+!  Works in Brave & uBlock Origin
+! =======================================================
+
+
+! =============================
+!   GENERAL SITE EXCEPTIONS
+! =============================
+
+@@||telemetry.api.playstation.com^$first-party
+@@||www.youtube.com^$first-party
+
+
+! =============================
+!   YOUTUBE – HIDE SHORTS
+! =============================
+
+! Hide Shorts shelf on homepage
+youtube.com##ytd-rich-shelf-renderer[is-shorts]
+youtube.com##ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])
+
+! Hide Shorts section using specific structure (for older layouts)
+www.youtube.com##ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-of-type(1) > div.style-scope.ytd-rich-section-renderer > .style-scope.ytd-rich-section-renderer > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(2) > div.style-scope.ytd-rich-shelf-renderer
+www.youtube.com##ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-of-type(1) > div.style-scope.ytd-rich-section-renderer > .style-scope.ytd-rich-section-renderer > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1)
+www.youtube.com##ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-of-type(2) > div.style-scope.ytd-rich-section-renderer > .style-scope.ytd-rich-section-renderer > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(2) > div.style-scope.ytd-rich-shelf-renderer
+www.youtube.com##ytd-rich-section-renderer.style-scope.ytd-rich-grid-renderer:nth-of-type(2) > div.style-scope.ytd-rich-section-renderer > .style-scope.ytd-rich-section-renderer > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1) > div.style-scope.ytd-rich-shelf-renderer:nth-of-type(1)
+
+
+! =============================
+!   YOUTUBE – SIDEBAR SHORTS
+! =============================
+
+! Hide Shorts button (expanded sidebar)
+www.youtube.com##ytd-guide-entry-renderer[title="Shorts"]
+
+! Hide Shorts icon (mini sidebar)
+www.youtube.com##ytd-mini-guide-entry-renderer[aria-label="Shorts"]
+
+! Legacy selectors for older layouts
+www.youtube.com##ytd-guide-section-renderer.style-scope.ytd-guide-renderer:nth-of-type(1) > div.style-scope.ytd-guide-section-renderer > ytd-guide-entry-renderer.style-scope.ytd-guide-section-renderer:nth-of-type(2)
+www.youtube.com##ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer:nth-of-type(2)
+
+
+! =============================
+! 🔹 YOUTUBE – POPUPS / OVERLAYS
+! =============================
+
+! Hide popup dialogs (login / prompt overlays)
+www.youtube.com##tp-yt-paper-dialog.style-scope.ytd-popup-container
+
+! Hide video overlay suggestions
+www.youtube.com##.ytp-ce-element.ytp-ce-video.ytp-ce-element-show.ytp-ce-large-round
+www.youtube.com##.ytp-ce-element.ytp-ce-video.ytp-ce-element-show.ytp-ce-large-round.ytp-ce-top-left-quad.ytp-ce-size-1280 > .ytp-ce-covering-overlay
+www.youtube.com##.ytp-ce-element.ytp-ce-video.ytp-ce-element-show.ytp-ce-large-round.ytp-ce-top-left-quad.ytp-ce-size-1280 > .ytp-ce-element-shadow
+
+
+! =============================
+! 🔹 YOUTUBE – BLOCK SHORTS PAGES
+! =============================
+
+! Block Shorts URLs completely
+youtube.com/shorts/*$document
+
+! =======================================================
+!  END
+! =======================================================
