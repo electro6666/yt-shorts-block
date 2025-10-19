@@ -1,0 +1,10 @@
+! Disable telemetry
+||youtubei.googleapis.com^$xhr,domain=youtube.com
+||googleads.g.doubleclick.net^$important
+||pagead2.googlesyndication.com^$important
+||s.youtube.com^$important
+||www.youtube.com/api/stats/$xhr,important
+@@||www.youtube.com^$first-party  ! keep first-party allowed
+
+! Block PlayStation telemetry (from your list)
+@@||telemetry.api.playstation.com^$first-party
