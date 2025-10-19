@@ -1,0 +1,7 @@
+! Hide trending/explore/shorts/etc
+www.youtube.com##ytd-guide-section-renderer:has(ytd-guide-entry-renderer[title="Trending"])
+www.youtube.com##ytd-guide-section-renderer:has(ytd-guide-entry-renderer[title="Shorts"])
+www.youtube.com##ytd-guide-section-renderer:has(ytd-guide-entry-renderer[title="Explore"])
+
+! Hide comments (optional — uncomment to use)
+! youtube.com##ytd-comments
